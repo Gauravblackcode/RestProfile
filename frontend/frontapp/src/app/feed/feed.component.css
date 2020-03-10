@@ -1,0 +1,20 @@
+.textbody{
+  /* height: 100%; */
+  width: 100%;
+}
+.img-col{
+  height: 3rem;
+}
+.round {
+    margin: auto;
+    text-align: center;
+    border-radius: 100%;
+    width: 5rem;
+    height: 5rem;
+}
+.textar{
+  padding-top: 3rem;
+  padding-left: 5rem;
+  color: cyan;
+  font-weight: bold;
+}

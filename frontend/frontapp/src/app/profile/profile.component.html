@@ -1,0 +1,32 @@
+<div class="row pt-5">
+  <div class="col-3">
+        <img  alt="profile" class="img-fluid round img-thumbnail" src="../../assets/profile.jpeg">
+        <div class="pt-3 text-center">
+            <button type="button" class="edit-button" *ngIf="!editing" (click)="editing = true" name="button">Edit profile</button>
+        </div>
+  </div>
+  <div class="col-9" *ngIf="!editing">
+    <h4>Email:-gaurecasm@gmail.com</h4>
+    <h4>Full name:- Mark 3</h4>
+    <h4>Date of Birth:- 01/01/2020</h4>
+  </div>
+      <div class="col-9" *ngIf="editing">
+          <form  method="post">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="text"  ngModel  #title="ngModel" class="form-control" name="title" placeholder="Enter email">
+              </div>
+
+              <div class="form-group" >
+                <label for="name">Enter Your Full Name</label>
+                <input type="text" ngModel name="name" required  #name="ngModel" class="form-control" placeholder="Full name">
+              </div>
+              <div class="form-group" >
+                <label for="price">Date of Birth</label>
+                <input type="datetime" ngModel name="datetime" required #datetime="ngModel" class="form-control" placeholder="DOB" >
+              </div>
+
+              <button type="submit" class="btn btn-primary" >Save</button>
+          </form>
+    </div>
+</div>

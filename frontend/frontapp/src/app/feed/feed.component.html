@@ -1,0 +1,59 @@
+<!-- user profile and to new post -->
+<section>
+
+    <div class="row pt-5">
+      <div class="col-11 m-auto">
+        <div class="card bg-dark p-2">
+          <div class="card-title">
+
+            <div class="row img-col">
+                <img  alt="profile" class="img-fluid round img-thumbnail float-right" src="../../assets/profile.jpeg">
+            </div>
+
+          </div>
+            <form (submit)="onPost(addPost)" #addPost="ngForm">
+              <div class="form-group">
+                <textarea name="status_text" class="textbody" ngModel  #status_text="ngModel"  rows="4" placeholder="Write Something !"> </textarea>
+                <button type="submit" class="btn btn-success float-right" name="button">Post</button>
+              </div>
+
+            </form>
+        </div>
+      </div>
+    </div>
+
+
+</section>
+
+<!-- other user profile with their posts -->
+
+<div class="row pt-5">
+    <div class="col-11 m-auto">
+          <div class="card bg-dark p-2" *ngFor="let post of posts">
+              <div class="card-title">
+                  <div class="card-body">
+                          <div class="row img-col">
+                              <div class="col-2">
+                                <img  alt="profile" class="img-fluid round img-thumbnail " src="../../assets/profile.jpeg">
+                              </div>
+                              <div class="col-10">
+                              <h2 class="float-left">{{ post.id }}</h2><br>
+                              <small class="form-text">{{ post.created_on }}</small>
+                              </div>
+                          </div>
+
+                          <div class="card-body textar">
+                                <p>{{ post.status_text }} </p>
+                          </div>
+                  </div>
+              </div>
+          </div>
+    </div>
+</div>
+<!-- <div class="row" *ngFor="let post of posts" >
+  <h3> {{ post.id }}</h3>
+  <h3> {{ post }}</h3>
+
+  <h1> {{ post.status_text }}</h1>
+
+</div> -->
