@@ -1,6 +1,5 @@
 <div class="col-8 m-auto">
-  <form (submit)="onlogin(postLogin)" #postLogin="ngForm">
-
+  <form (submit)="onRegister(postReg)" #postReg="ngForm"  *ngIf="RegisterMode">
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
       <input type="text"  ngModel  #email="ngModel" class="form-control" name="email" placeholder="Enter email">
@@ -27,14 +26,23 @@
       <input type="datetime" ngModel name="datetime" required #datetime="ngModel" class="form-control" placeholder="DOB" >
     </div> -->
 
-    <div class="form-group form-check" *ngIf="RegisterMode">
-      <input type="checkbox" class="form-check-input">
-      <label class="form-check-label" for="exampleCheck1">I Agree all terms & Conditions</label>
-    </div>
-
-    <button type="submit" class="btn btn-primary" *ngIf="!RegisterMode">Login</button>
      <button type="submit" class="btn btn-primary" *ngIf="RegisterMode">Register</button>
   </form>
+
+<!-- loginnnnnnnnnnnnnn -->
+<form (submit)="onLogin(postLog)" #postLog="ngForm"  *ngIf="!RegisterMode">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="text"  ngModel  #username="ngModel" class="form-control" name="username" placeholder="Enter email">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputPassword">Password</label>
+    <input type="password" ngModel name="password" required  #password="ngModel" class="form-control" placeholder="Password">
+  </div>
+
+   <button type="submit" class="btn btn-primary" *ngIf="!RegisterMode">Login</button>
+</form>
 
   <span *ngIf="!RegisterMode" (click)="RegisterMode = true">Don't have an account? <a class="orange"> Register Here </a> </span>
   <span *ngIf="RegisterMode" (click)="RegisterMode = false">Already have an account? <a class="orange"> Login Here </a> </span>

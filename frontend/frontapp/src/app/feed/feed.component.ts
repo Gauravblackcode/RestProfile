@@ -7,7 +7,7 @@ import {  NgForm } from '@angular/forms';
   styleUrls: ['./feed.component.css']
 })
 export class FeedComponent implements OnInit {
-  posts = [];
+  posts: any = [];
 
   constructor(private appService:AppService) { }
 

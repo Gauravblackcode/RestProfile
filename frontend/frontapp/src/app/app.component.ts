@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AppService } from './app.service';
+import { CookieService } from 'ngx-cookie-service';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +10,13 @@ import { AppService } from './app.service';
 })
 export class AppComponent {
   title = 'frontapp';
-  posts = [];
+  posts:any = [];
 
-  constructor(private appService:AppService){}
+  constructor(
+    private appService:AppService,
+    private cookieService:CookieService,
+    private router: Router,
+  ) {}
   ngOnInit() {
 
     this.appService.getPosts().subscribe(
@@ -22,5 +28,9 @@ export class AppComponent {
         console.log(error);
       }
     )
+  }
+  logout() {
+    this.cookieService.delete('mr-token');
+    this.router.navigate(['login'])
   }
 }

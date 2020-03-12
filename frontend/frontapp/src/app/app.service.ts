@@ -17,7 +17,7 @@ export class AppService {
   }
   loginUser(authdata){
     const body = JSON.stringify(authdata);
-    console.log('serive aftr JSON stringify working', body);
+    console.log('login service aftr JSON stringify working', body);
     return this.http.post('http://127.0.0.1:8000/api/login', body, {headers: this.headers})
 
   }

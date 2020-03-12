@@ -1,0 +1,4 @@
+angular/cli@8
+nodejs
+ngx-cookies-service
+bootstrap@4
