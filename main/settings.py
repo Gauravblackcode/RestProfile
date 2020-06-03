@@ -83,13 +83,26 @@ WSGI_APPLICATION = 'main.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'djangoapp',
+        'USER': 'root',
+        'PASSWORD': 'baba@2301',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:4200",
+    "http://localhost:3306",
+
 ]
 
 
